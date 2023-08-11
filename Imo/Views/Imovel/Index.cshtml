@@ -1,0 +1,41 @@
+﻿@model List<Imo.Models.Domain.Imovel>
+
+<h1>Imóveis</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Tipo de Negócio</th>
+                <th>Localização</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Data</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var imovel in Model)
+            {
+                <tr>
+                    <td>@imovel.Nome</td>
+                    <td>@imovel.Tipo</td>
+                    <td>@imovel.TipoNegocio</td>
+                    <td>@imovel.Localizacao</td>
+                    <td>@imovel.Preco</td>
+                    <td>@imovel.Descricao</td>
+                    <td>@imovel.ContactoFone</td>
+                    <td>@imovel.ContactoEmail</td>
+                    <td>@imovel.Date?.ToString("dd-MM-yyyy")</td>
+                    <td><a class="btn btn-sm btn-primary" href="/Imovel/Image?idImovel=@imovel.Id">Adicionar Imagens</a></td>
+                    <td><a class="btn btn-sm btn-success" href="/Imovel/View?id=@imovel.Id">Visualizar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

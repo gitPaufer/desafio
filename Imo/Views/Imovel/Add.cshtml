@@ -1,0 +1,49 @@
+﻿@model Imo.Models.AddImovelViewModel
+@{
+}
+<h1>Adicionar Imóvel</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="Nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" asp-for="Nome">
+    </div>
+    <div class="mb-3">
+        <label for="disabledSelect" class="form-label">Tipo de Imóvel</label>
+        <select id="disabledSelect" class="form-select" asp-for="Tipo">
+            <option>Apartamento</option>
+            <option>Morada</option>
+            <option>Quinta</option>
+            <option>Terreno</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="disabledSelect" class="form-label">Tipo de Negócio</label>
+        <select id="disabledSelect" class="form-select" asp-for="TipoNegocio">
+            <option>Comprar</option>
+            <option>Arrendar</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Localização</label>
+        <textarea class="form-control" id="Localizacao" rows="2" asp-for="Localizacao"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+        <textarea class="form-control" id="Descricao" rows="3" asp-for="Descricao"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Preço</label>
+        <textarea class="form-control" id="Preco" rows="1" asp-for="Preco"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Telefone</label>
+        <textarea class="form-control" id="ContactoFone" rows="1" asp-for="ContactoFone"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+        <textarea class="form-control" id="ContactoEmail" rows="1" asp-for="ContactoEmail"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+ 

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Imo.Models.Domain.Imovel_Foto>
+
+<h1>Upload de Imagens</h1>
+
+<form action="UploadImagem?idImovel=@ViewBag.IdImovel" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        <label for="Id" class="form-label">Id do Imóvel</label>
+        <input type="hidden" name="idImovel" value="@ViewBag.IdImovel">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Escolher Imagens</label>
+        <input type="file" name="files" class="form-control-file" multiple />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Salvar Imagem
+    </button>
+</form>
+
+<h2>Imagens do Imóvel</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Ficheiro da Imagem</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescricaoFoto)
+                    </td>
+                    <td>
+                        @*<a class="btn btn-sm btn-primary" asp-action="Visualizar" asp-route-id="@item.Id" target="_blank">Visualizar</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhuma imagem disponível.</p>
+}
